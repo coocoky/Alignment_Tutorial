@@ -1,0 +1,79 @@
+---- Read params ----
+Worker 0 / 1
+Temp  dir: '/groups/apig/tomo/DEMO/temp0'.
+Cache dir: '/groups/apig/tomo/DEMO/temp0/2/montage/lsqcache'.
+Prior solutions: ''.
+Mode: 'A2A'.
+Rglizer Wr: R, 0.001
+Error  tol: 30
+Iterations: 2000
+Split-min:  1000
+Maxthreads: 1
+zi [2 2]
+zo [2 2]
+
+---- Cataloging ----
+Timer: Catalog took 0.000 seconds.
+
+---- Initializing tables ----
+Z-map: < 0 0 < [0 (0 0) 0] > 0 0 >
+Timer: Table took 0.000 seconds.
+
+---- Loading points ----
+Timer: WrBin took 0.010 seconds.
+Timer: RdBin took 0.000 seconds.
+Timer: Remap took 0.000 seconds.
+Timer: Total took 0.010 seconds.
+Loaded 214 point pairs.
+
+---- Solve ----
+Timer: AFromIDB took 0.000 seconds.
+Solve: A to A (Wr R, 0.001 Etol 30 iters 2000)
+NRgns: 14
+NThrd: 1
+Timer: Solve took 0.070 seconds.
+
+---- Bounds ----
+Global bounds: x=[0 2525.00] y=[0 6188.00].
+Timer: Bounds took 0.000 seconds.
+
+---- Magnitudes ----
+All workers:
+Small RMS 0.998 TopN	0.997	0.998	0.998	0.998	0.998	0.998	0.998	0.998	0.998	0.999	2.9-1	2.10-1	2.11-1	2.8-1	2.3-1	2.2-1	2.4-1	2.5-1	2.12-1	2.7-1
+
+Big RMS 0.998 TopN	0.999	0.999	0.999	0.999	0.999	0.998	0.998	0.998	0.998	0.998	2.6-1	2.0-1	2.13-1	2.1-1	2.7-1	2.12-1	2.5-1	2.4-1	2.2-1	2.3-1
+Timer: Mags took 0.010 seconds.
+
+---- Error statistics ----
+All workers:
+Same RMS 0.17 TopN	0.57	0.47	0.46	0.40	0.40	0.40	0.40	0.38	0.35	0.34	2.4-1^2.3-1	2.9-1^2.10-1	2.4-1^2.3-1	2.3-1^2.10-1	2.4-1^2.9-1	2.3-1^2.10-1	2.0-1^2.13-1	2.9-1^2.10-1	2.4-1^2.9-1	2.2-1^2.11-1
+Timer: Errors took 0.000 seconds.
+
+---- Dropouts ----
+All workers: MAX        14 READ         0 PNTS         0 KILL         0 CUTD         0
+Timer: Drops  took 0.000 seconds.
+
+FINAL RMS 0.17 MAX 0.57 {Mx,Rd,Pt,Ki,Cd} 14 0 0 0 0
+Timer: Save took 0.010 seconds.
+
+Timer: Lsq took 0.100 seconds.
+
+---- Memory ----
+Host name: h01u24.int.janelia.org
+PID:       18309
+User time:       0 seconds.
+System time:     0 seconds.
+VmPeak:	   70032 kB
+VmSize:	   69524 kB
+VmLck:	       0 kB
+VmHWM:	    4656 kB
+VmRSS:	    4656 kB
+VmData:	    1260 kB
+VmStk:	      96 kB
+VmExe:	     172 kB
+VmLib:	   38660 kB
+VmPTE:	     140 kB
+VmSwap:	       0 kB
+voluntary_ctxt_switches:	69
+nonvoluntary_ctxt_switches:	5
+
