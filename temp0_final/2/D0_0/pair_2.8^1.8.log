@@ -1,0 +1,446 @@
+
+---- dmesh start ----
+main: Start: Fri Aug  8 18:53:12 2014
+
+
+---- Match parameters ----
+PXBRO=2            <default 2>        "Max Legendre poly order for bkg removal"
+PXLENS=N           <default N>        "Y=Apply IDB/lens.txt"
+PXRESMSK=N         <default N>        "Y=Apply resin mask"
+PXDOG=N            <default N>        "Y=Apply DoG filter"
+PXDOG_R1=3         <default 3>        "DoG inner radius"
+PXDOG_R2=6         <default 6>        "DoG outer radius"
+FLD=N              <default X>        "Mask usage: Y=Use, N=None, X=XL only"
+PRETWEAK=N         <default N>        "Y=Auto-distort before angle scan"
+SCALE=1            <default 1.0>      "Image-B / image-A scale factor"
+XSCALE=1           <default 1.0>      "Image-B / image-A x-axis scale factor"
+YSCALE=1           <default 1.0>      "Image-B / image-A y-axis scale factor"
+SKEW=0             <default 0.0>      "Transform elem[3] user-applied distortion"
+MODE_SL=M          <default Z>        "Notes above"
+MODE_XL=N          <default Y>        "Notes above"
+TAB2DFM_SL=N       <default Y>        "Adopt Tdfm from Tab"
+TAB2DFM_XL=Y       <default Y>        "Adopt Tdfm from Tab"
+XYCONF_SL=1.0      <default 0.0>      "[0,1.0] confidence in Tab XY"
+XYCONF_XL=0.8      <default 0.0>      "[0,1.0] confidence in Tab XY"
+THMDEC_SL=8        <default 8>        "2^N thumb decimation factor"
+THMDEC_XL=8        <default 8>        "2^N thumb decimation factor"
+OLAP1D_SL=0        <default 0>        "Min 1D pix full-size overlap"
+OLAP1D_XL=0        <default 0>        "Min 1D pix full-size overlap"
+OLAP2D_SL=60000    <default 25000>    "Min 2D pix full-size overlap"
+OLAP2D_XL=160000   <default 200000>   "Min 2D pix full-size overlap"
+NBMXHT_SL=0.75     <default 0.75>     "Max F(neib)/F(pk) in guard zone"
+NBMXHT_XL=0.75     <default 0.75>     "Max F(neib)/F(pk) in guard zone"
+HFANGDN_SL=5       <default 5.0>      "Half angle search range denovo"
+HFANGDN_XL=45      <default 45.0>     "Half angle search range denovo"
+HFANGPR_SL=1       <default 1.0>      "Half angle search range prior angles"
+HFANGPR_XL=4       <default 1.0>      "Half angle search range prior angles"
+RTRSH_SL=0.3       <default 0.3>      "R corr thresh"
+RTRSH_XL=0.3       <default 0.3>      "R corr thresh"
+TWEAKS=N           <default N>        "Y=Try 8 near unity distortions"
+LIMXY_SL=30        <default 0>        "0 or Max XY delta from Tab"
+LIMXY_XL=80        <default 0>        "0 or Max XY delta from Tab"
+OPT_SL=Y           <default Y(EM)>    "Y=Enable mesh optimizer"
+RIT_SL=0.50        <default 0.20>     "Min mesh starting corr"
+RIT_XL=0.1         <default 0.20>     "Min mesh starting corr"
+RFA_SL=0.55        <default 0.3>      "Affine-only final corr"
+RFA_XL=0.20        <default 0.3>      "Affine-only final corr"
+RFT_SL=0.65        <default 0.5>      "Full mesh final corr"
+RFT_XL=0.25        <default 0.5>      "Full mesh final corr"
+TMC=5              <default 30.0%>    "Max single triangle area change"
+TSC=9              <default 9.0%>     "Max summed triangle area change"
+MNL=250            <default 300>      "Triangle edges between MNL and 2*MNL"
+MTA=120000         <default 10000>    "Min triangle size (pixels)"
+MMA=60000          <default 100000>   "Min 2D overlap for mesh"
+ONE=N              <default N>        "Y=Use just one affine transform"
+IFM=0.50           <default 0.50>     "Min Fourier Metric after affine-only"
+FFM=0.65           <default 0.65>     "Min Fourier Metric after full mesh"
+FYL=0.5            <default 0.50>     "Min fraction of yellow pixels"
+CPD=0.5            <default 0.50>     "Min Correlation + DFM"
+EMM=Y              <default Y>        "Y=Use Earth Mover's Metric, N=Use Fourier"
+EMT=0.14           <default 0.2>      "Earth Movers Metric thresh"
+WDI=N              <default N>        "Y=Write diff images (Fourier, EMM metrics)"
+LDA=0.2            <default 0.2>      "Max radian delta between triangles"
+LDR=0.1            <default 0.1>      "Max sine delta between triangles"
+LDC=100            <default 100.0>    "Max XY delta between triangles"
+DXY=100            <default 100.0>    "Max delta from user input XYs"
+WMT=N              <default Y>        "Y=Write map.tif files"
+WTT=N              <default Y>        "Y=Write tf.txt files"
+
+
+---- Input images ----
+Til2Img entry: A T=[ 1.0000  0.0000     0.00  0.0000  1.0000  4285.00] path=[/groups/apig/tomo/DEMO/TIF/C1_8_2.tif].
+Til2Img entry: B T=[ 1.0000  0.0000     0.00  0.0000  1.0000  4285.00] path=[/groups/apig/tomo/DEMO/TIF/B1_8_2.tif].
+
+
+---- Command-line overrides ----
+Tab=  0.9993 -0.0234   -51.53    0.0230  0.9997    33.76
+Tdfm= 0.9995 -0.0002     0.00   -0.0002  0.9999     0.00
+FLD=N
+
+
+---- Image loading ----
+Raster8FromTif: Opening [/groups/apig/tomo/DEMO/TIF/C1_8_2.tif].
+Raster8FromTif: Bits per sample 8, samples per pixel 1
+Raster8FromTif: Picture is 1376 by 1040, 1431040 pixels total.
+TIF(8): Last Encoded strip had 1376 bytes.
+Raster8FromTif: Opening [/groups/apig/tomo/DEMO/TIF/B1_8_2.tif].
+Raster8FromTif: Bits per sample 8, samples per pixel 1
+Raster8FromTif: Picture is 1376 by 1040, 1431040 pixels total.
+TIF(8): Last Encoded strip had 1376 bytes.
+PixPair: Using image scale=1.
+Timer: Image conditioning took 0.250 seconds.
+
+---- Foldmaps ----
+
+---- Connected regions ----
+Forcing single connected region.
+
+---- Begin A-1 to B-1 ----
+
+---- Thumbnail matching ----
+Subimage: Using intersection, w=1335, h=1013, pix=1352355
+Thumbs: After decimation 21209 pts, reqArea 2501, thmscl 8
+SetDisc( -1, 1, 10, 10 )
+Initial: R= 2.287, A=   1.329, X=   -1.01, Y=    1.22
+Peak-Disc: dR 1 dX 0 dY 1
+Approx: LowRes  R=2.287, X=-8.117, Y=9.757
+Approx: FullRes R=0.358, X=-7.937, Y=10.151, use=Y.
+Timer: FinishAtFullRes took 1.460 seconds.
+Approx: Returning A=1.329001, R=2.286707, X=-48.906650, Y=36.207454
+Approx: Best transform  0.9993 -0.0234   -48.91    0.0230  0.9996    36.21
+Approx: Orig transform  0.9993 -0.0234   -51.53    0.0230  0.9996    33.76
+Approx: Idnt transform  1.0000  0.0000     2.68    0.0000  1.0000     2.39
+Approx: err = 3.5865, max = 80
+
+---- Starting detailed region mapping ----
+Roughly 1300218 pixels map to B.
+Region size is [48 1375] in x, [0 1002] in y.
+
+---- Building mesh - affine ----
+Computed simple triangle.
+
+---- ImproveMesh - affine ----
+Tri: (48 0) (1375 0) (711 1002).
+
+---- Matlab Vertices ----
+x=[48 1375 711 48]; y=[0 0 1002 0]; plot(x,y); hold on;
+
+---- ImproveControlPts ----
+STAT: ImproveCpt: Initial affine correlation 0.599366 (1300218 pixels).
+corr=0.599366	step=10.000000
+corr=0.599366	step=5.000000
+corr=0.609219	step=5.000000
+corr=0.609219	step=2.500000
+corr=0.609219	step=1.250000
+corr=0.610282	step=1.250000
+corr=0.610282	step=0.625000
+corr=0.610289	step=0.625000
+corr=0.610364	step=0.625000
+STAT: ImproveCpt: Final affine correlation 0.610364, (threshold 0.200000).
+
+---- Matlab A-Sys Originals ----
+x=[48.000000 1375.000000 711.000000 48.000000]; y=[0.000000 0.000000 1002.000000 0.000000]; plot(x,y); hold on;
+
+---- Matlab B-Sys Originals ----
+x=[-0.942026 1325.079975 638.156611 -0.942026]; y=[37.311838 67.843454 1054.215442 37.311838]; plot(x,y); hold on;
+
+---- Matlab B-Sys Optimized ----
+x=[2.435676 1323.311238 637.570987 2.435676]; y=[40.123872 65.786910 1053.772905 40.123872]; plot(x,y); hold on;
+
+---- Deltas ----
+id=     0: dx=    3.38 dy=    2.81 d=    4.40
+id=     1: dx=   -1.77 dy=   -2.06 d=    2.71
+id=     2: dx=   -0.59 dy=   -0.44 d=    0.73
+
+---- Areas ----
+Triangle 0, area was   664827.0, is   661302.4,   -0.5%
+Combined: area was   664827.0, is   661302.4,   -0.5%
+
+---- Transforms ----
+ 0.9954 -0.0248   -45.34    0.0193  0.9988    39.20
+Best affine transform:  0.9954 -0.0248   -45.34    0.0193  0.9988    39.20
+    Inverse transform:  1.0042  0.0249    44.56   -0.0194  1.0007   -40.10
+
+---- QC - affine ----
+Metrics: AFF: Mean square difference 0.779213
+Metrics: AFF: Smallest footprint deg=0, area=1.32767e+06
+MetricImages: Range x 46 1375, y 0 999, use Nx=1330, Ny=1000
+Approximate EM metric 0.081057 for 1330000 points.
+%Yellow: Tol   1.05  red   40.6  yellow   22.9  green   36.5
+%Yellow: Tol   1.10  red   30.8  yellow   41.7  green   27.5
+%Yellow: Tol   1.15  red   23.3  yellow   55.7  green   21.0
+%Yellow: Tol   1.20  red   17.6  yellow   66.1  green   16.2
+%Yellow: Tol   1.25  red   13.6  yellow   73.6  green   12.8
+Affine Triangle: 1301183 points, corr 0.610393, fm 0.081057, yellow 0.74
+
+---- Building mesh - deformable ----
+Lx Dx Nx:  1327   663.00   2
+Ly Dy Ny:  1002   501.00   2
+
+STAT: From 1300218 pts, got 8 triangles, 9 control points.
+Timer: MeshCreate took 0.050 seconds.
+
+---- ImproveMesh - deformable mesh ----
+Tri: (48 0) (711 0) (48 501).
+Tri: (48 501) (711 0) (711 501).
+Tri: (711 0) (1375 0) (711 501).
+Tri: (711 501) (1375 0) (1375 501).
+Tri: (48 501) (711 501) (48 1002).
+Tri: (48 1002) (711 501) (711 1002).
+Tri: (711 501) (1375 501) (711 1002).
+Tri: (711 1002) (1375 501) (1375 1002).
+
+---- Matlab Vertices ----
+x=[48 711 48 48]; y=[0 0 501 0]; plot(x,y); hold on;
+x=[48 711 711 48]; y=[501 0 501 501]; plot(x,y); hold on;
+x=[711 1375 711 711]; y=[0 0 501 0]; plot(x,y); hold on;
+x=[711 1375 1375 711]; y=[501 0 501 501]; plot(x,y); hold on;
+x=[48 711 48 48]; y=[501 501 1002 501]; plot(x,y); hold on;
+x=[48 711 711 48]; y=[1002 501 1002 1002]; plot(x,y); hold on;
+x=[711 1375 711 711]; y=[501 501 1002 501]; plot(x,y); hold on;
+x=[711 1375 1375 711]; y=[1002 501 1002 1002]; plot(x,y); hold on;
+
+---- ImproveControlPts ----
+STAT: ImproveCpt: Initial deformable mesh correlation 0.610364 (1300218 pixels).
+corr=0.610364	step=10.000000
+corr=0.610364	step=5.000000
+corr=0.610364	step=2.500000
+corr=0.610364	step=1.250000
+corr=0.610585	step=1.250000
+corr=0.610609	step=1.250000
+corr=0.610609	step=0.625000
+STAT: ImproveCpt: Final deformable mesh correlation 0.610709, (threshold 0.250000).
+
+---- Matlab A-Sys Originals ----
+x=[48.000000 711.000000 48.000000 48.000000]; y=[0.000000 0.000000 501.000000 0.000000]; plot(x,y); hold on;
+x=[48.000000 711.000000 711.000000 48.000000]; y=[501.000000 0.000000 501.000000 501.000000]; plot(x,y); hold on;
+x=[711.000000 1375.000000 711.000000 711.000000]; y=[0.000000 0.000000 501.000000 0.000000]; plot(x,y); hold on;
+x=[711.000000 1375.000000 1375.000000 711.000000]; y=[501.000000 0.000000 501.000000 501.000000]; plot(x,y); hold on;
+x=[48.000000 711.000000 48.000000 48.000000]; y=[501.000000 501.000000 1002.000000 501.000000]; plot(x,y); hold on;
+x=[48.000000 711.000000 711.000000 48.000000]; y=[1002.000000 501.000000 1002.000000 1002.000000]; plot(x,y); hold on;
+x=[711.000000 1375.000000 711.000000 711.000000]; y=[501.000000 501.000000 1002.000000 501.000000]; plot(x,y); hold on;
+x=[711.000000 1375.000000 1375.000000 711.000000]; y=[1002.000000 501.000000 1002.000000 1002.000000]; plot(x,y); hold on;
+
+---- Matlab B-Sys Originals ----
+x=[2.435676 662.375765 -9.966713 2.435676]; y=[40.123872 52.945722 540.537464 40.123872]; plot(x,y); hold on;
+x=[-9.966713 662.375765 649.973376 -9.966713]; y=[540.537464 52.945722 553.359313 540.537464]; plot(x,y); hold on;
+x=[662.375765 1323.311238 649.973376 662.375765]; y=[52.945722 65.786910 553.359313 52.945722]; plot(x,y); hold on;
+x=[649.973376 1323.311238 1310.908849 649.973376]; y=[553.359313 65.786910 566.200502 553.359313]; plot(x,y); hold on;
+x=[-9.966713 649.973376 -22.369102 -9.966713]; y=[540.537464 553.359313 1040.951056 540.537464]; plot(x,y); hold on;
+x=[-22.369102 649.973376 637.570987 -22.369102]; y=[1040.951056 553.359313 1053.772905 1040.951056]; plot(x,y); hold on;
+x=[649.973376 1310.908849 637.570987 649.973376]; y=[553.359313 566.200502 1053.772905 553.359313]; plot(x,y); hold on;
+x=[637.570987 1310.908849 1298.506460 637.570987]; y=[1053.772905 566.200502 1066.614094 1053.772905]; plot(x,y); hold on;
+
+---- Matlab B-Sys Optimized ----
+x=[2.974071 662.290550 -10.104626 2.974071]; y=[40.532716 52.942110 540.567180 40.532716]; plot(x,y); hold on;
+x=[-10.104626 662.290550 649.329429 -10.104626]; y=[540.567180 52.942110 553.663117 540.567180]; plot(x,y); hold on;
+x=[662.290550 1323.733134 649.329429 662.290550]; y=[52.942110 65.882138 553.663117 52.942110]; plot(x,y); hold on;
+x=[649.329429 1323.733134 1310.390770 649.329429]; y=[553.663117 65.882138 566.162469 553.663117]; plot(x,y); hold on;
+x=[-10.104626 649.329429 -21.879384 -10.104626]; y=[540.567180 553.663117 1040.661487 540.567180]; plot(x,y); hold on;
+x=[-21.879384 649.329429 637.237263 -21.879384]; y=[1040.661487 553.663117 1054.113194 1040.661487]; plot(x,y); hold on;
+x=[649.329429 1310.390770 637.237263 649.329429]; y=[553.663117 566.162469 1054.113194 553.663117]; plot(x,y); hold on;
+x=[637.237263 1310.390770 1298.809756 637.237263]; y=[1054.113194 566.162469 1066.746237 1054.113194]; plot(x,y); hold on;
+
+---- Deltas ----
+id=     0: dx=    0.54 dy=    0.41 d=    0.68
+id=     1: dx=   -0.09 dy=   -0.00 d=    0.09
+id=     2: dx=    0.42 dy=    0.10 d=    0.43
+id=     3: dx=   -0.14 dy=    0.03 d=    0.14
+id=     4: dx=   -0.64 dy=    0.30 d=    0.71
+id=     5: dx=   -0.52 dy=   -0.04 d=    0.52
+id=     6: dx=    0.49 dy=   -0.29 d=    0.57
+id=     7: dx=   -0.33 dy=    0.34 d=    0.48
+id=     8: dx=    0.30 dy=    0.13 d=    0.33
+
+---- Areas ----
+Triangle 0, area was   166081.5, is   164921.6,   -0.7%
+Triangle 1, area was   166081.5, is   165181.1,   -0.5%
+Triangle 2, area was   166332.0, is   165683.0,   -0.4%
+Triangle 3, area was   166332.0, is   165441.4,   -0.5%
+Triangle 4, area was   166081.5, is   164966.7,   -0.7%
+Triangle 5, area was   166081.5, is   165008.8,   -0.6%
+Triangle 6, area was   166332.0, is   165489.7,   -0.5%
+Triangle 7, area was   166332.0, is   165659.4,   -0.4%
+Combined: area was  1329654.0, is  1322351.7,   -0.5%
+
+---- Transforms ----
+ 0.9944 -0.0261   -44.76    0.0187  0.9981    39.63
+ 0.9946 -0.0259   -44.89    0.0198  0.9994    38.90
+ 0.9961 -0.0259   -45.97    0.0195  0.9994    39.09
+ 0.9956 -0.0266   -45.18    0.0188  0.9986    40.00
+ 0.9946 -0.0235   -46.07    0.0198  0.9982    39.52
+ 0.9941 -0.0241   -45.41    0.0203  0.9989    38.79
+ 0.9956 -0.0241   -46.43    0.0188  0.9989    39.83
+ 0.9963 -0.0231   -48.00    0.0190  0.9992    39.42
+
+---- QC - deformable ----
+Remapping 1431040 points.
+Metrics: DEF: Mean square difference 0.778510
+Metrics: DEF: Smallest footprint deg=0, area=1.32767e+06
+MetricImages: Range x 46 1375, y 0 999, use Nx=1330, Ny=1000
+Approximate EM metric 0.081035 for 1330000 points.
+All points, deformable, dfm 0.081035
+
+Metrics: TRI: Mean square difference 0.706923
+Metrics: TRI: Smallest footprint deg=0, area=327845
+MetricImages: Range x 46 711, y 0 493, use Nx=666, Ny=494
+Approximate EM metric 0.053955 for 329004 points.
+%Yellow: Tol   1.05  red   38.5  yellow   24.1  green   37.4
+%Yellow: Tol   1.10  red   28.8  yellow   43.2  green   27.9
+%Yellow: Tol   1.15  red   21.7  yellow   57.3  green   21.1
+%Yellow: Tol   1.20  red   16.4  yellow   67.5  green   16.1
+%Yellow: Tol   1.25  red   12.4  yellow   75.1  green   12.5
+Triangle 0: 164658 points, corr 0.646532, fm 0.053955, yellow 0.75
+
+Metrics: TRI: Mean square difference 0.661306
+Metrics: TRI: Smallest footprint deg=0, area=326500
+MetricImages: Range x 58 711, y 1 501, use Nx=654, Ny=502
+Approximate EM metric 0.060353 for 328308 points.
+%Yellow: Tol   1.05  red   38.6  yellow   24.8  green   36.6
+%Yellow: Tol   1.10  red   28.0  yellow   45.0  green   27.0
+%Yellow: Tol   1.15  red   20.1  yellow   59.7  green   20.2
+%Yellow: Tol   1.20  red   14.6  yellow   70.3  green   15.1
+%Yellow: Tol   1.25  red   10.9  yellow   77.6  green   11.5
+Triangle 1: 166616 points, corr 0.669341, fm 0.060353, yellow 0.78
+
+Metrics: TRI: Mean square difference 0.690465
+Metrics: TRI: Smallest footprint deg=0, area=331500
+MetricImages: Range x 712 1375, y 0 500, use Nx=664, Ny=502
+Approximate EM metric 0.063022 for 333328 points.
+%Yellow: Tol   1.05  red   39.3  yellow   22.4  green   38.3
+%Yellow: Tol   1.10  red   29.6  yellow   41.5  green   28.9
+%Yellow: Tol   1.15  red   22.0  yellow   56.5  green   21.5
+%Yellow: Tol   1.20  red   16.3  yellow   67.6  green   16.1
+%Yellow: Tol   1.25  red   12.2  yellow   75.5  green   12.4
+Triangle 2: 166414 points, corr 0.654761, fm 0.063022, yellow 0.75
+
+Metrics: TRI: Mean square difference 0.616273
+Metrics: TRI: Smallest footprint deg=0, area=331500
+MetricImages: Range x 712 1375, y 1 501, use Nx=664, Ny=502
+Approximate EM metric 0.059049 for 333328 points.
+%Yellow: Tol   1.05  red   38.0  yellow   25.7  green   36.3
+%Yellow: Tol   1.10  red   28.3  yellow   45.6  green   26.1
+%Yellow: Tol   1.15  red   21.1  yellow   59.8  green   19.1
+%Yellow: Tol   1.20  red   15.8  yellow   69.9  green   14.3
+%Yellow: Tol   1.25  red   12.1  yellow   76.8  green   11.2
+Triangle 3: 166914 points, corr 0.691858, fm 0.059049, yellow 0.77
+
+Metrics: TRI: Mean square difference 0.934709
+Metrics: TRI: Smallest footprint deg=0, area=313950
+MetricImages: Range x 59 709, y 502 985, use Nx=652, Ny=484
+Approximate EM metric 0.051480 for 315568 points.
+%Yellow: Tol   1.05  red   42.1  yellow   20.2  green   37.7
+%Yellow: Tol   1.10  red   33.0  yellow   37.1  green   29.9
+%Yellow: Tol   1.15  red   25.6  yellow   50.7  green   23.7
+%Yellow: Tol   1.20  red   19.9  yellow   61.1  green   19.0
+%Yellow: Tol   1.25  red   15.7  yellow   68.9  green   15.4
+Triangle 4: 157879 points, corr 0.532639, fm 0.051480, yellow 0.69
+
+Metrics: TRI: Mean square difference 0.851242
+Metrics: TRI: Smallest footprint deg=37, area=315056
+MetricImages: Range x -546 266, y 828 1216, use Nx=814, Ny=390
+Approximate EM metric 0.054023 for 317460 points.
+%Yellow: Tol   1.05  red   42.8  yellow   21.3  green   35.9
+%Yellow: Tol   1.10  red   32.9  yellow   39.4  green   27.7
+%Yellow: Tol   1.15  red   24.9  yellow   53.3  green   21.8
+%Yellow: Tol   1.20  red   18.9  yellow   63.6  green   17.4
+%Yellow: Tol   1.25  red   14.7  yellow   71.0  green   14.3
+Triangle 5: 160620 points, corr 0.574373, fm 0.054023, yellow 0.71
+
+Metrics: TRI: Mean square difference 0.877772
+Metrics: TRI: Smallest footprint deg=0, area=319924
+MetricImages: Range x 712 1373, y 502 986, use Nx=662, Ny=486
+Approximate EM metric 0.090152 for 321732 points.
+%Yellow: Tol   1.05  red   41.6  yellow   19.5  green   38.9
+%Yellow: Tol   1.10  red   32.6  yellow   36.7  green   30.7
+%Yellow: Tol   1.15  red   25.4  yellow   50.6  green   24.0
+%Yellow: Tol   1.20  red   19.7  yellow   61.6  green   18.8
+%Yellow: Tol   1.25  red   15.4  yellow   69.7  green   14.9
+Triangle 6: 165600 points, corr 0.561108, fm 0.090152, yellow 0.70
+
+Metrics: TRI: Mean square difference 0.880831
+Metrics: TRI: Smallest footprint deg=37, area=305095
+MetricImages: Range x -8 797, y 1227 1606, use Nx=806, Ny=380
+Approximate EM metric 0.089278 for 306280 points.
+%Yellow: Tol   1.05  red   42.3  yellow   19.7  green   38.0
+%Yellow: Tol   1.10  red   33.9  yellow   36.7  green   29.3
+%Yellow: Tol   1.15  red   27.2  yellow   49.9  green   22.9
+%Yellow: Tol   1.20  red   21.5  yellow   60.5  green   18.0
+%Yellow: Tol   1.25  red   17.0  yellow   68.5  green   14.5
+Triangle 7: 152483 points, corr 0.559578, fm 0.089278, yellow 0.68
+
+
+---- Final reports ----
+STAT: Overall 1301184 points, corr 0.6107, EMM 0.0810, weighted EMM 0.0650, cor+dfm 0.6917, weighted yellow 0.7296
+
+Angle span: min, max, delta = 0.021115 0.022875 0.001760
+Mesh-Thm: 0.0041  0.0016     3.07    0.0037  0.0008     3.19 2x(LDR,LDC)=(0.20,200.00) -- OK.
+
+Final remapping of 1431040 points.
+Center 260.284137 160.413805:  0.9944 -0.0261   -44.76    0.0187  0.9981    39.63
+Mapping region 1 xy= 260.284137 160.413805 to region 1 xy= 209.891160 204.610698
+Center 455.387014 347.077757:  0.9946 -0.0259   -44.89    0.0198  0.9994    38.90
+Mapping region 1 xy= 455.387014 347.077757 to region 1 xy= 399.073303 394.777582
+Center 914.661194 153.666051:  0.9961 -0.0259   -45.97    0.0195  0.9994    39.09
+Mapping region 1 xy= 914.661194 153.666051 to region 1 xy= 861.191919 210.491537
+Center 1113.311077 349.224511:  0.9956 -0.0266   -45.18    0.0188  0.9986    40.00
+Mapping region 1 xy= 1113.311077 349.224511 to region 1 xy= 1053.902005 409.678883
+Center 264.634115 664.700892:  0.9946 -0.0235   -46.07    0.0198  0.9982    39.52
+Mapping region 1 xy= 264.634115 664.700892 to region 1 xy= 201.516940 708.251214
+Center 475.183154 840.598220:  0.9941 -0.0241   -45.41    0.0203  0.9989    38.79
+Mapping region 1 xy= 475.183154 840.598220 to region 1 xy= 406.697257 888.104053
+Center 915.329852 655.170566:  0.9956 -0.0241   -46.43    0.0188  0.9989    39.83
+Mapping region 1 xy= 915.329852 655.170566 to region 1 xy= 849.033910 711.510829
+Center 1141.370506 839.638838:  0.9963 -0.0231   -48.00    0.0190  0.9992    39.42
+Mapping region 1 xy= 1141.370506 839.638838 to region 1 xy= 1069.787492 900.075008
+
+Pipe: Returning 8 total transforms.
+
+---- Summary Region-region results ----
+Pipe: Table Headers {Az t r Bz t r thmok ntri}
+FOUND:     2    8   1      1    8   1   1   8
+
+---- Tabulating point matches ----
+
+Timer: Alignment took 3.860 seconds.
+
+main: Got 8 mapping regions.
+main: Transform   0:  0.9944 -0.0261   -44.76    0.0187  0.9981    39.63
+main: Transform   1:  0.9946 -0.0259   -44.89    0.0198  0.9994    38.90
+main: Transform   2:  0.9961 -0.0259   -45.97    0.0195  0.9994    39.09
+main: Transform   3:  0.9956 -0.0266   -45.18    0.0188  0.9986    40.00
+main: Transform   4:  0.9946 -0.0235   -46.07    0.0198  0.9982    39.52
+main: Transform   5:  0.9941 -0.0241   -45.41    0.0203  0.9989    38.79
+main: Transform   6:  0.9956 -0.0241   -46.43    0.0188  0.9989    39.83
+main: Transform   7:  0.9963 -0.0231   -48.00    0.0190  0.9992    39.42
+
+main: Average:  0.9952 -0.0249     0.00    0.0193  0.9988     0.00
+main: Degrees: 1.27141
+main: Residue:  0.9954 -0.0028     0.00   -0.0028  0.9991     0.00
+
+main: Inverse:  1.0044  0.0251    -0.00   -0.0194  1.0007    -0.00
+main: Degrees: -1.27141
+main: Residue:  1.0045  0.0028     0.00    0.0028  1.0010     0.00
+
+main: Normal completion for dmesh run.
+Timer: Total took 4.110 seconds.
+
+---- Memory ----
+Host name: h02u07.int.janelia.org
+PID:       26475
+User time:       3 seconds.
+System time:     0 seconds.
+VmPeak:	 1113808 kB
+VmSize:	  149440 kB
+VmLck:	       0 kB
+VmHWM:	 1030288 kB
+VmRSS:	   66124 kB
+VmData:	   61580 kB
+VmStk:	      96 kB
+VmExe:	     800 kB
+VmLib:	   61764 kB
+VmPTE:	     284 kB
+VmSwap:	       0 kB
+voluntary_ctxt_switches:	19
+nonvoluntary_ctxt_switches:	48
+

@@ -1,0 +1,84 @@
+---- Read params ----
+Worker 0 / 1
+Temp  dir: '/groups/apig/tomo/DEMO/temp0'.
+Cache dir: '/groups/apig/tomo/DEMO/temp0/stack/lsqcache'.
+Prior solutions: '../cross_wkspc/X_A_BIN_scaf'.
+Mode: 'A2A'.
+Rglizer Wr: R, 0
+Error  tol: 500
+Iterations: 10000
+Split-min:  1000
+Maxthreads: 16
+zi [0 2]
+zo [0 2]
+
+---- Cataloging ----
+Timer: Catalog took 0.000 seconds.
+
+---- Initializing tables ----
+Z-map: < 0 0 < [0 (0 2) 2] > 0 0 >
+Timer: Table took 0.010 seconds.
+
+---- Loading points ----
+Timer: WrBin took 0.010 seconds.
+Timer: RdBin took 0.000 seconds.
+Timer: Remap took 0.000 seconds.
+Timer: Total took 0.010 seconds.
+Loaded 890 point pairs.
+
+---- Solve ----
+Timer: XFromBin took 0.010 seconds.
+Timer: Untwist took 0.000 seconds.
+Solve: A to A (Wr R, 0 Etol 500 iters 10000)
+NRgns: 42
+NThrd: 5
+Timer: Solve took 1.130 seconds.
+
+---- Bounds ----
+Global bounds: x=[0 2868.00] y=[0 6512.00].
+Timer: Bounds took 0.000 seconds.
+
+---- Magnitudes ----
+All workers:
+Small RMS 0.997 TopN	0.987	0.987	0.987	0.988	0.989	0.990	0.990	0.990	0.993	0.994	0.1-1	0.12-1	0.0-1	0.13-1	0.11-1	0.2-1	0.3-1	0.10-1	2.1-1	2.12-1
+
+Big RMS 0.997 TopN	1.005	1.004	1.004	1.004	1.004	1.004	1.003	1.003	1.003	1.002	1.6-1	1.4-1	1.0-1	1.5-1	1.9-1	1.7-1	1.8-1	1.2-1	1.11-1	1.13-1
+Timer: Mags took 0.010 seconds.
+
+---- Error statistics ----
+All workers:
+Same RMS 0.40 TopN	1.71	1.65	1.20	1.20	1.18	1.15	1.12	1.08	1.08	1.02	0.11-1^0.12-1	0.11-1^0.12-1	0.11-1^0.12-1	0.9-1^0.10-1	0.10-1^0.11-1	0.11-1^0.12-1	1.1-1^1.12-1	0.2-1^0.11-1	1.1-1^1.12-1	0.2-1^0.11-1
+
+Down RMS 0.91 TopN	4.48	2.77	2.61	2.55	2.50	2.47	2.36	2.17	2.01	1.98	2.10-1^1.10-1	1.12-1^0.12-1	2.3-1^1.4-1	1.12-1^0.12-1	1.1-1^0.12-1	1.0-1^0.1-1	1.0-1^0.1-1	1.12-1^0.12-1	2.12-1^1.13-1	1.13-1^0.13-1
+
+All RMS 0.59 TopN	4.48	2.77	2.61	2.55	2.50	2.47	2.36	2.17	2.01	1.98	2.10-1^1.10-1	1.12-1^0.12-1	2.3-1^1.4-1	1.12-1^0.12-1	1.1-1^0.12-1	1.0-1^0.1-1	1.0-1^0.1-1	1.12-1^0.12-1	2.12-1^1.13-1	1.13-1^0.13-1
+Timer: Errors took 0.010 seconds.
+
+---- Dropouts ----
+All workers: MAX        42 READ         0 PNTS         0 KILL         0 CUTD         0
+Timer: Drops  took 0.000 seconds.
+
+FINAL RMS 0.59 MAX 4.48 {Mx,Rd,Pt,Ki,Cd} 42 0 0 0 0
+Timer: Save took 0.020 seconds.
+
+Timer: Lsq took 1.210 seconds.
+
+---- Memory ----
+Host name: h07u24.int.janelia.org
+PID:       30391
+User time:       0 seconds.
+System time:     0 seconds.
+VmPeak:	  521512 kB
+VmSize:	  331732 kB
+VmLck:	       0 kB
+VmHWM:	    4988 kB
+VmRSS:	    4988 kB
+VmData:	  263468 kB
+VmStk:	      96 kB
+VmExe:	     172 kB
+VmLib:	   38660 kB
+VmPTE:	     160 kB
+VmSwap:	       0 kB
+voluntary_ctxt_switches:	9156
+nonvoluntary_ctxt_switches:	261
+

@@ -1,0 +1,2 @@
+../1/D0_0/cross_thisblock.log:PeakHunt: Best: K=7, R=1.114, A=-0.079, X=-32.909, Y=22.062
+../2/D0_0/cross_thisblock.log:PeakHunt: Best: K=10, R=1.355, A=0.000, X=-11.810, Y=5.366
