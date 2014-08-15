@@ -1163,7 +1163,7 @@ The result is `Affine.xml`.
 
 ## <a name="undo"></a>Undo
 
-If you make a mistake and want to bomb back to an earlier state so that you can redo some steps with different parameters. I've created a few handy scripts for that. Find them in `1_MakeMontages`. The scripts are named `cleanXXX.sht`.
+If you make a mistake and want to bomb back to an earlier state so that you can redo some steps with different parameters, I've created a few handy scripts for that. Find them in `1_MakeMontages`. The scripts are named `cleanXXX.sht`.
 
 _fin_
 
