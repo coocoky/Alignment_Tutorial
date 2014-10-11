@@ -1,7 +1,7 @@
-Scapeops start: Fri Aug  8 18:50:25 2014 /groups/apig/tomo/DEMO/temp0/X_A_BIN_mons -script=/groups/apig/tomo/DEMO/prms/scriptparams.txt -idb=/groups/apig/tomo/DEMO/idb0 -mb -zb=2 
+Scapeops start: Fri Aug  8 18:50:25 2014 /groups/apig/tomo/DEMO/temp0/X_A_BIN_mons -script=/groups/apig/tomo/DEMO/prms/scriptparams.txt -idb=/groups/apig/tomo/DEMO/idb0 -mb -zb=2
 
 ---- Script parameters ----
-slotspernode=16       <typical 16>      "fixed slot count per cluster node"
+slotspernode=16        <typical 16>      "fixed slot count per cluster node"
 usingfoldmasks=N       <typical N>       "Y=Each tile gets foldmask image"
 croprectfile=          <path or blank>   "{cam,x0,y0,dx,dy} for ea. cam"
 makefmjparam=4         <typical 4>       "'fsub'/make.fm -j #concurrent_procs"
@@ -16,10 +16,10 @@ crossscale=8           <typical 50>      "scale reduction for strips and blocks"
 legendremaxorder=2     <typical 1>       "max order Legendre poly bkgnd subtraction"
 rendersdevcnts=42      <typical 42>      "rescale making 1 stdev this many cnts"
 maskoutresin=N         <typical N>       "Y=remove resin pixels from EM rendering"
-stripwidth=5           <typical 15>      "strips n tiles wide in short dimension"
+stripwidth=5           <typical 15>      "strips n tiles wide in short dimension (0 -> full)"
 stripsweepspan=360     <typical 360.0>   "strip angle sweep span (deg, 0 -> force 0)"
 stripsweepstep=5       <typical 5.0>     "strip sweep step size (deg, step > 0)"
-stripmincorr=0.02      <typical 0.02>    "strips 'fail' if correlation this low"
+stripmincorr=0.02      <typical 0.02>    "try bigger strips if correlation this low"
 stripslots=8           <typical 8>       "subscapes.sht/scapeops slots/threads per job"
 crossblocksize=10      <typical 10>      "block work grid cell size^2 tiles"
 blocksweepspan=8       <typical 8.0>     "block angle sweep span (deg)"
