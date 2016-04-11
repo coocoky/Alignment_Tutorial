@@ -135,6 +135,7 @@ absolute_rooted_image_path X_float Y_float Z_integer_index
 	* All the images for a layer should be grouped together in a layout file.
 	* Listed Z's should never decrease.
 	* Z's need not be contiguous: we will automatically match across gaps.
+	* Z need not start at 0 (set desired `-z=i,j` range in topgo.sht).
 * The image-id (a.k.a. tileid) must be embedded in the image filename. There is no other field provided for the id.
 	* TileID is a non-negative 32-bit integer and is unique within its layer.
 	* `Tip: ID's can be anything, but assigning, say, col*1000+row, makes navigating easier`.
